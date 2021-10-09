@@ -23,6 +23,7 @@ function changeState(){
                 box[i].innerHTML = "X";
                 state.push("X");
 				whoWon();
+				restartGame();
 
             }
             else {
@@ -31,6 +32,7 @@ function changeState(){
                     box[i].innerHTML = "O";
                     state.push("O");
 					whoWon();
+					restartGame();
                    
                 }
                 else if (state[state.length - 1] === "O" && box[i].innerHTML === ""){
@@ -38,6 +40,7 @@ function changeState(){
                     box[i].innerHTML = "X";
                     state.push("X");
 					whoWon();
+					restartGame();
       
 
                 }
@@ -136,4 +139,9 @@ function whoWon(){
         document.getElementById("status").innerHTML = "Congratulations! O is the Winner!";
     }
 }
- 
+
+function restartGame(){
+	document.getElementsByClassName("btn")[0].addEventListener("click", function(){
+        window.location.reload(true);
+    });
+}
